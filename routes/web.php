@@ -26,4 +26,16 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('social-links', 'SocialLinksController');
 
     Route::post('social-links/media', 'SocialLinksController@storeMedia')->name('social-links.storeMedia');
+
+    Route::delete('banners/destroy', 'BannerController@massDestroy')->name('banners.massDestroy');
+
+    Route::resource('banners', 'BannerController');
+
+    Route::post('banners/media', 'BannerController@storeMedia')->name('banners.storeMedia');
+
+    Route::delete('principals/destroy', 'PrincipalController@massDestroy')->name('principals.massDestroy');
+
+    Route::resource('principals', 'PrincipalController');
+
+    Route::post('principals/media', 'PrincipalController@storeMedia')->name('principals.storeMedia');
 });

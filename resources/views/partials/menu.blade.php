@@ -84,6 +84,30 @@
                         </a>
                     </li>
                 @endcan
+                @can('banner_access')
+                    <li class="nav-item">
+                        <a href="{{ route("admin.banners.index") }}" class="nav-link {{ request()->is('admin/banners') || request()->is('admin/banners/*') ? 'active' : '' }}">
+                            <i class="fas fa-backward">
+
+                            </i>
+                            <p>
+                                <span>{{ trans('global.banner.title') }}</span>
+                            </p>
+                        </a>
+                    </li>
+                @endcan
+                @can('principal_access')
+                    <li class="nav-item">
+                        <a href="{{ route("admin.principals.index") }}" class="nav-link {{ request()->is('admin/principals') || request()->is('admin/principals/*') ? 'active' : '' }}">
+                            <i class="fas fa-chess-queen">
+
+                            </i>
+                            <p>
+                                <span>{{ trans('global.principal.title') }}</span>
+                            </p>
+                        </a>
+                    </li>
+                @endcan
                 <li class="nav-item">
                     <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
                         <p>

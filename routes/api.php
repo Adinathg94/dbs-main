@@ -8,4 +8,8 @@ Route::group(['prefix' => 'v1', 'as' => 'admin.', 'namespace' => 'Api\V1\Admin']
     Route::apiResource('users', 'UsersApiController');
 
     Route::apiResource('social-links', 'SocialLinksApiController');
+
+    Route::apiResource('banners', 'BannerApiController');
+
+    Route::apiResource('principals', 'PrincipalApiController');
 });
